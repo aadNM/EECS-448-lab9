@@ -17,7 +17,7 @@
         margin-left: -5%;
     }
     div.box{
-        max-width: 33%;
+        max-width: 30%;
     }
     img.img- {
         max-width: 215px !important;
@@ -130,3 +130,31 @@ img.box-img {
     width: 100%;
 }
 
+table, th, td {
+  border: 1px solid black;
+}
+
+th{
+    background-color: #4caf5073;
+}
+
+td{
+    background-color: #3f51b578;
+}
+
+form {
+    margin: 2% 0 0 30%;
+    width: 50%;
+    padding: 2% 0 2% 6%;
+    background-color: #dde5ed;
+}
+
+#carSelect input {
+    /* margin-right: 10px; */
+    text-align: center;
+    width: 40px;
+}
+
+form div {
+    margin-bottom: 4%;
+}

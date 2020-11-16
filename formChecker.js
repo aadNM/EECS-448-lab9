@@ -18,7 +18,7 @@ function validateForm(){
 	var genesis = document.querySelector("#genesisTotal").value;
 	var jesko = document.querySelector("#jeskoTotal").value;
 	var yukon = document.querySelector("#yukonTotal").value;
-	var email = document.querySelector("#email").value;
+	var username = document.querySelector("#username").value;
 	var password = document.querySelector("#password").value;
 	this.totals();
 	if((urus == "" ) || (avantador == "" ) || (amg == "") || (genesis == "") || (jesko == "") || (yukon == "")){
@@ -33,8 +33,8 @@ function validateForm(){
 		alert("Select at least one car to buy.");
 		return false;
 	}
-	if(email == "" || password == ""){
-		alert("Fill in your email and password, please.");
+	if(username == "" || password == ""){
+		alert("Fill in your username and password, please.");
 		return false;
 	}
 	
@@ -91,6 +91,19 @@ function updateCost(){
 	this.totalCars = 0;
 }
 
+
+function reset(){
+	document.querySelector("#totalCars").innerHTML = 0;
+	document.querySelector("#shipPrice").innerHTML = 0;
+	document.querySelector("#tax").innerHTML = 0;
+	document.querySelector("#totalPrice").innerHTML = 0;
+	document.querySelector("#urusTotal").value = "0";
+	document.querySelector("#avantadorTotal").value = "0";
+	document.querySelector("#amgTotal").value = "0";
+	document.querySelector("#genesisTotal").value = "0";
+	document.querySelector("#jeskoTotal").value = "0";
+	document.querySelector("#yukonTotal").value = "0";
+}
 /*urusTotal
 avantadorTotal
 amgTotal
@@ -99,7 +112,7 @@ jeskoTotal
 yukonTotal
 
 shipOptions
-email
+username
 password
 
 totalCars

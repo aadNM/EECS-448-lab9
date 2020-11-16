@@ -1,6 +1,8 @@
 <?php 
 
 	libxml_use_internal_errors(true);
+	error_reporting(E_ALL);
+	ini_set("display_errors", 1);
 
 	$question1 = $_POST["KScap"];
 	$question2 = $_POST["NYcap"];
