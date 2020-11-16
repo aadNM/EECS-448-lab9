@@ -1,0 +1,126 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<title>Web Store</title>
+	
+	<link rel="stylesheet" type="text/css" href="styleStore.css">
+</head>
+<body>
+	<section class="box-wrapper">
+		<div class="box-container">
+			<div class="box">
+				<div class="box-img-container"><img class="box-img" src="./images/yukon.jpg" style="max-width: 244px;" /> </div>
+
+				<div class="box-title">
+					<h4>2021 GMC Yukon - $51,995</h4>
+				</div>
+
+				<div class="box-text">
+					<p>When it comes to large, three-row family-hauling, toy-towing muscle, the 2021 GMC Yukon and Yukon XL will be hard to beat when they go on sale this summer.</p>
+				</div>
+			</div>
+
+		 
+			<div class="box">
+				<div class="box-img-container"><img class="box-img" src="./images/amg.jpg" style="max-width: 244px;" /> </div>
+
+				<div class="box-title">
+				<h4>2019 Mercedes-AMG GT53 - $100,945</h4>
+				</div>	 
+
+				<div class="box-text">
+					<p>The mad scientists in Affalterbach have applied their talents to a new challenge, and the 2019 Mercedes-AMG GT53 is the scintillating result.</p>
+				</div>
+			</div>
+
+			 
+			<div class="box">
+				<div class="box-img-container"><img class="box-img" src="./images/avantador.jpg" style="max-width: 244px;" /> </div>
+
+				<div class="box-title">
+					<h4>2021 Lamborghini Aventador - $421,321</h4>
+				</div>
+
+				<div class="box-text">
+					<p>In a world that has become heavily reliant on technology, the 2021 Lamborghini Aventador takes a more nostalgic look at things.</p>
+				</div>
+			</div>
+		</div>
+		<div class="box-container">
+			<div class="box">
+				<div class="box-img-container"><img class="box-img" src="./images/jesko.jpg" style="max-width: 244px;" /> </div>
+
+				<div class="box-title">
+					<h4>2021 Koenigsegg Jesko - $3,000,000</h4>
+				</div>
+
+				<div class="box-text">
+					<p>Koenigsegg is probably best known for being largely unknown, which makes sense since this Swedish automaker builds ultra-exclusive and ultra-expensive hypercars.</p>
+				</div>
+			</div>
+
+		 
+			<div class="box">
+				<div class="box-img-container"><img class="box-img" src="./images/genesis.jpg" style="max-width: 244px;" /> </div>
+
+				<div class="box-title">
+				<h4> 2021 Genesis GV80 - $49,925</h4>
+				</div>	 
+
+				<div class="box-text">
+					<p>Fledgling luxury carmaker Genesis has proven that it is quite capable of challenging European and Japanese luxury brands and now it's getting into the premium SUV game with the 2021 GV80.</p>
+				</div>
+			</div>
+
+			 
+			<div class="box">
+				<div class="box-img-container"><img class="box-img" src="./images/urus.jpg" style="max-width: 244px;" /></div>
+
+				<div class="box-title">
+					<h4>2021 Lamborghini Urus - $222,004</h4>
+				</div>
+
+				<div class="box-text">
+					<p>The 2021 Lamborghini Urus is extreme in almost every way, which is exactly what's expected when a legendary supercar maker builds an SUV.</p>
+				</div>
+			</div>
+		</div>
+
+		<form name="myForm" action="./customerBackend.php" onsubmit="return validateForm()" method="post">
+		 	<div id="carSelect">
+				Lamborghini Urus: <input type="number" id="urusTotal" value="0" name="urusTotal" min="0" placeholder="0" onchange="updateCost()" onfocus="this.value=''"><br>
+				Lamborghini Avantador: <input type="number" value="0" id="avantadorTotal" name="avantadorTotal" min="0" onchange="updateCost()" onfocus="this.value=''"><br>
+				Mercedez-AMG GT53: <input type="number" value="0" id="amgTotal" name="amgTotal" min="0" onchange="updateCost()"><br>
+				Genesis GV80: <input type="number" value="0" id="genesisTotal" name="genesisTotal" min="0" onchange="updateCost()" onfocus="this.value=''"><br>
+				Koenigsegg Jesko: <input type="number" value="0"  id="jeskoTotal" name="jeskoTotal" min="0" onchange="updateCost()" onfocus="this.value=''"><br>
+				GMC Yukon: <input type="number" value="0"  id="yukonTotal" name="yukonTotal" min="0" onchange="updateCost()" onfocus="this.value=''">
+			</div>
+			<div id="shipping">
+				<input type="radio" value="free" name="shipOptions" checked id="free" required change="shipCostCalc(); updateCost()">
+				<label for="free">Free 7 day</label><br>
+				<input type="radio" value="overNight" name="shipOptions" id="overNight" onchange="shipCostCalc(); updateCost()">
+				<label for="overNight">$50.00 over night</label><br>
+				<input type="radio" value="threeDay" name="shipOptions" id="threeDay" onchange="shipCostCalc(); updateCost()">
+				<label for="threeDay">$5.00 three days</label>
+			</div>
+			<div id="login">
+				Username: <input type="email" id="email" required><br>
+				Password: <input type="password" id="password" name="password" minlength="8" required>
+			</div>
+			<div id="totalAmounts">
+				<p>Total cars: <span id="totalCars"></span><br>
+					Shipping: <span id="shipPrice"></span><br>
+					Tax: <span id="tax"></span><br>
+					Total price: <span id="totalPrice"></span>
+				</p>
+			</div>
+			 <input type="submit" value="Submit">
+			 <button onClick="reset()">Reset</button>
+
+		</form>
+
+	</section>
+	<script type="text/javascript" src="formChecker.js"></script>
+</body>
+</html>
